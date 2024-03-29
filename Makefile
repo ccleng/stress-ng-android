@@ -16,6 +16,14 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #
+CURRENT_DIR := $(CURDIR)
+SYSROOT=$(CURRENT_DIR)/ndk_toolchain/r22b/arm-linux-androideabi/sysroot
+
+CROSS_COMPILE=$(CURRENT_DIR)/ndk_toolchain/r22b/arm-linux-androideabi/bin/aarch64-linux-android30
+CC=$(CROSS_COMPILE)-clang --sysroot=$(SYSROOT)
+CXX=$(CROSS_COMPILE)-clang++ --sysroot=$(SYSROOT)
+
+STATIC=1
 
 VERSION=0.17.06
 #
